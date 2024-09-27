@@ -58,6 +58,36 @@ function loadData() {
 }
 loadData();
 
+/************************* SORT COLUMN*************************/
+
+let sortOrder = true; // true for ascending, false for descending
+
+function sortTable(column, order) {
+  const rows = Array.from(tbody.querySelectorAll('tr'));
+  const sortedRows = rows.sort((prevRow, nextRow) => {
+    const prevRowText = prevRow.querySelector(`td:nth-child(${column})`).innerText;
+    const nextRowText = nextRow.querySelector(`td:nth-child(${column})`).innerText;
+
+    const prevRowValue = isNaN(prevRowText) ? prevRowText : parseFloat(prevRowText);
+    const nextRowValue = isNaN(nextRowText) ? nextRowText : parseFloat(nextRowText);
+
+    if (prevRowValue < nextRowValue) return order ? -1 : 1;
+    if (prevRowValue > nextRowValue) return order ? 1 : -1;
+    return 0;
+  });
+
+  tbody.innerHTML = "";
+  sortedRows.forEach(row => tbody.appendChild(row));
+}
+
+document.querySelectorAll('th[head-column]').forEach(header => {
+  header.addEventListener('click', () => {
+    const columnIndex = Array.from(header.parentNode.children).indexOf(header) + 1; // Index starts from 1
+    sortTable(columnIndex, sortOrder);
+    sortOrder = !sortOrder; // Toggle sort order
+  });
+});
+
 /************************* ADD ROW *************************/
 
 const addRow = document.querySelector(".fa-circle-plus");
