@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "chemical_name": "Sodium Chloride",
+    "vender": "ChemCorp Ltd.",
+    "density": "2.16",
+    "viscosity": "1.5",
+    "packaging": "Bag",
+    "pack_size": "50.00",
+    "unit": "kg",
+    "quantity": 500
+  },
+  {
+    "id": 2,
+    "chemical_name": "Sulfuric Acid",
+    "vender": "AcidTech Inc.",
+    "density": "1.84",
+    "viscosity": "26.7",
+    "packaging": "Drum",
+    "pack_size": "200.00",
+    "unit": "L",
+    "quantity": 600
+  },
+  {
+    "id": 3,
+    "chemical_name": "Acetone",
+    "vender": "Organic Chem Ltd.",
+    "density": "0.79",
+    "viscosity": "0.32",
+    "packaging": "Canister",
+    "pack_size": "25.00",
+    "unit": "L",
+    "quantity": 125
+  },
+  {
+    "id": 4,
+    "chemical_name": "Hydrogen Peroxide",
+    "vender": "Oxidize Ltd.",
+    "density": "1.45",
+    "viscosity": "1.245",
+    "packaging": "Bottle",
+    "pack_size": "5.00",
+    "unit": "L",
+    "quantity": 100
+  },
+  {
+    "id": 5,
+    "chemical_name": "Ethanol",
+    "vender": "Solvent Supplies",
+    "density": "0.789",
+    "viscosity": "1.2",
+    "packaging": "Drum",
+    "pack_size": "50.00",
+    "unit": "L",
+    "quantity": 300
+  },
+  {
+    "id": 6,
+    "chemical_name": "Calcium Carbonate",
+    "vender": "MineralChemicals Ltd.",
+    "density": "2.71",
+    "viscosity": "72.12",
+    "packaging": "N/A",
+    "pack_size": "25.00",
+    "unit": "kg",
+    "quantity": 1000
+  },
+  {
+    "id": 7,
+    "chemical_name": "Methanol",
+    "vender": "BioChem Suppliers",
+    "density": "0.792",
+    "viscosity": "0.59",
+    "packaging": "Barrel",
+    "pack_size": "200.00",
+    "unit": "L",
+    "quantity": 400
+  },
+  {
+    "id": 8,
+    "chemical_name": "Ammonium Nitrate",
+    "vender": "FertChem Inc.",
+    "density": "1.725",
+    "viscosity": "76.51",
+    "packaging": "Bag",
+    "pack_size": "50.00",
+    "unit": "kg",
+    "quantity": 600
+  },
+  {
+    "id": 9,
+    "chemical_name": "Chloroform",
+    "vender": "SolventTech",
+    "density": "1.49",
+    "viscosity": "0.56",
+    "packaging": "Canister",
+    "pack_size": "N/A",
+    "unit": "L",
+    "quantity": 75
+  },
+  {
+    "id": 10,
+    "chemical_name": "Sodium Hydroxide",
+    "vender": "BaseChem Ltd.",
+    "density": "2.13",
+    "viscosity": "78",
+    "packaging": "Drum",
+    "pack_size": "50.00",
+    "unit": "kg",
+    "quantity": 500
+  },
+  {
+    "id": 11,
+    "chemical_name": "Nitric Acid",
+    "vender": "AcidBase Chemicals",
+    "density": "1.51",
+    "viscosity": "2.0",
+    "packaging": "Bottle",
+    "pack_size": "1.00",
+    "unit": "L",
+    "quantity": 50
+  },
+  {
+    "id": 12,
+    "chemical_name": "Glycerin",
+    "vender": "Biochem Solutions",
+    "density": "1.26",
+    "viscosity": "1.41",
+    "packaging": "Bottle",
+    "pack_size": "5.00",
+    "unit": "L",
+    "quantity": 30
+  },
+  {
+    "id": 13,
+    "chemical_name": "Isopropyl Alcohol",
+    "vender": "CleanChem Ltd.",
+    "density": "0.786",
+    "viscosity": "2.43",
+    "packaging": "N/A",
+    "pack_size": "20.00",
+    "unit": "L",
+    "quantity": 150
+  },
+  {
+    "id": 14,
+    "chemical_name": "Potassium Chloride",
+    "vender": "FertilChem Ltd.",
+    "density": "1.98",
+    "viscosity": "48.22",
+    "packaging": "Bag",
+    "pack_size": "25.00",
+    "unit": "kg",
+    "quantity": 800
+  },
+  {
+    "id": 15,
+    "chemical_name": "Formaldehyde",
+    "vender": "FixTech Inc.",
+    "density": "0.815",
+    "viscosity": "1.0",
+    "packaging": "Bottle",
+    "pack_size": "1.00",
+    "unit": "L",
+    "quantity": 45
+  }
+]
