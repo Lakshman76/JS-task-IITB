@@ -2,6 +2,18 @@ const tbody = document.getElementById("tbody");
 let totalTableRow = 0;
 let isUnsaved = false;
 
+// function to select or deselect rows
+function selectRow(row, checkIcon) {
+  row.classList.toggle("selected");
+  if (row.classList.contains("selected")) {
+    checkIcon.style.color = "blue";
+    row.style.backgroundColor = "#dcdcff";
+  } else {
+    checkIcon.style.color = "#b1b1b1";
+    row.style.backgroundColor = "white";
+  }
+}
+
 function showTable(data) {
   tbody.innerHTML = "";
   data.map((chemical) => {
@@ -20,18 +32,13 @@ function showTable(data) {
           `;
     tbody.appendChild(tr);
 
+    // To select or deselect rows click on check icon
     const checkIcon = tr.querySelector(".fa-check");
     checkIcon.addEventListener("click", () => {
-      tr.classList.toggle("selected");
-      if (tr.classList.contains("selected")) {
-        checkIcon.style.color = "blue";
-        tr.style.backgroundColor = "#dcdcff";
-      } else {
-        checkIcon.style.color = "#b1b1b1";
-        tr.style.backgroundColor = "white";
-      }
+      selectRow(tr, checkIcon);
     });
 
+    // Click on any cell to edit it's value
     const rows = tr.querySelectorAll("[contenteditable = 'true']");
     rows.forEach((row) => {
       row.addEventListener("input", () => {
@@ -43,6 +50,7 @@ function showTable(data) {
   });
 }
 
+// By default table shows json data but when we make some changes into table it will show that data.
 function loadData() {
   const savedData = localStorage.getItem("chemicalData");
   if (savedData) {
@@ -62,6 +70,7 @@ loadData();
 
 let sortOrder = true; // true for ascending, false for descending
 
+// function to sort the column using sort() method
 function sortTable(column, order) {
   const rows = Array.from(tbody.querySelectorAll('tr'));
   const sortedRows = rows.sort((prevRow, nextRow) => {
@@ -80,6 +89,8 @@ function sortTable(column, order) {
   sortedRows.forEach(row => tbody.appendChild(row));
 }
 
+// when click on column header it will first sort the table in ascending order and then in descending
+// But when you click first on column1 then it sort it into ascending order and in the second click of column2 it will sort it in descending order
 document.querySelectorAll('th[head-column]').forEach(header => {
   header.addEventListener('click', () => {
     const columnIndex = Array.from(header.parentNode.children).indexOf(header) + 1; // Index starts from 1
@@ -111,16 +122,11 @@ addRow.addEventListener("click", () => {
   totalTableRow++;
   save.classList.remove("fa-solid");
   save.classList.add("fa-regular");
+
+  // To select or deselect newly added rows click on check icon
   const checkIcon = newRow.querySelector(".fa-check");
   checkIcon.addEventListener("click", () => {
-    newRow.classList.toggle("selected");
-    if (newRow.classList.contains("selected")) {
-      checkIcon.style.color = "blue";
-      newRow.style.backgroundColor = "#dcdcff";
-    } else {
-      checkIcon.style.color = "#b1b1b1";
-      newRow.style.backgroundColor = "white";
-    }
+    selectRow(newRow, checkIcon);
   });
 });
 
@@ -155,7 +161,7 @@ moveRowUp.addEventListener("click", () => {
   });
 });
 
-/************************* DELETE *************************/
+/************************* DELETE ROW *************************/
 
 const deleteRow = document.querySelector(".fa-trash");
 deleteRow.addEventListener("click", () => {
@@ -209,6 +215,7 @@ save.addEventListener("click", () => {
       quantity: cells[9].innerText,
     };
   });
+  // Save data in local storage
   localStorage.setItem("chemicalData", JSON.stringify(savedData));
   save.classList.remove("fa-regular");
   save.classList.add("fa-solid");
